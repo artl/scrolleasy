@@ -1,15 +1,15 @@
 {
-  "name": "smoothscroll-for-websites",
+  "name": "scrolleasy",
   "version": "1.4.6",
   "description": "Smooth scrolling experience for websites. This is the standalone version of SmoothScroll for individual websites and themes. Mouse wheel, keyboard and touchpad scrolling all supported.",
-  "main": "SmoothScroll.js",
+  "main": "scrolleasy.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
-    "minify": "uglifyjs SmoothScroll.js --compress --mangle --output SmoothScroll.min.js"
+    "minify": "uglifyjs scrolleasy.js --compress --mangle --output scrolleasy.min.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/galambalazs/smoothscroll-for-websites.git"
+    "url": "https://github.com/artl/scrolleasy.git"
   },
   "keywords": [
     "smooth",
@@ -21,12 +21,12 @@
     "easing",
     "nice"
   ],
-  "author": "Balazs Galambosi (https://www.smoothscroll.net)",
+  "author": "Art Laman",
   "license": "SEE LICENSE IN ./LICENSE",
   "bugs": {
-    "url": "https://github.com/galambalazs/smoothscroll-for-websites/issues"
+    "url": "https://github.com/artl/scrolleasy/issues"
   },
-  "homepage": "https://github.com/galambalazs/smoothscroll-for-websites",
+  "homepage": "https://github.com/artl/scrolleasy",
   "devDependencies": {
     "uglify-js": "^2.6.1"
   }
