@@ -679,13 +679,14 @@
 	 */
 
 	var userAgent = window.navigator.userAgent;
-	var isEdge = /Edge/.test(userAgent); // thank you MS
+
+	var isCompatibleIE = (userAgent.indexOf('Trident/') > 0 && parseInt(userAgent.substring(userAgent.indexOf('rv:') + 3, userAgent.indexOf('.', userAgent.indexOf('rv:'))), 10) > 11);
+	var isEdge = /Edge/.test(userAgent);
 	var isChrome = /chrome/i.test(userAgent) && !isEdge;
 	var isSafari = /safari/i.test(userAgent) && !isEdge;
 	var isMobile = /mobile/i.test(userAgent);
-	var isIEWin7 = /Windows NT 6.1/i.test(userAgent) && /rv:11/i.test(userAgent);
 	var isOldSafari = isSafari && (/Version\/8/i.test(userAgent) || /Version\/9/i.test(userAgent));
-	var isEnabledForBrowser = (isChrome || isSafari || isIEWin7) && !isMobile;
+	var isEnabledForBrowser = (isChrome || isSafari || isCompatibleIE || isEdge) && !isMobile;
 
 	var wheelEvent;
 	if ('onwheel' in document.createElement('div'))
