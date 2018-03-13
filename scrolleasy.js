@@ -290,6 +290,11 @@
       return true;
     }
 
+    // leave early if document is not yet loaded
+	if (document.readyState === "loading") {
+      return true;
+	}
+
     // leave embedded content alone (flash & pdf)
     if (isNodeName(activeElement, 'embed') ||
       (isNodeName(target, 'embed') && /\.pdf/i.test(target.src)) ||
