@@ -26,8 +26,5 @@
   "bugs": {
     "url": "https://github.com/artl/scrolleasy/issues"
   },
-  "homepage": "https://github.com/artl/scrolleasy",
-  "devDependencies": {
-    "uglify-js": "^2.6.1"
-  }
+  "homepage": "https://github.com/artl/scrolleasy"
 }
