@@ -286,8 +286,8 @@
 			return true;
 		}
 
-		// leave early if document is not yet loaded
-		if (document.readyState === "loading") {
+		// leave early if there's no active element
+		if (!activeElement && !document.activeElement) {
 			return true;
 		}
 
