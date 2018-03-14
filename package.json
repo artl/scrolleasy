@@ -5,7 +5,7 @@
   "main": "scrolleasy.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
-    "minify": "uglifyjs scrolleasy.js --compress --mangle --output scrolleasy.min.js"
+    "minify": "uglifyjs scrolleasy.js -cmo scrolleasy.min.js --source-map url=scrolleasy.min.js.map"
   },
   "repository": {
     "type": "git",
