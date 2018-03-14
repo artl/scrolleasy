@@ -680,7 +680,7 @@
 
 	var userAgent = window.navigator.userAgent;
 
-	var isCompatibleIE = (userAgent.indexOf('Trident/') > 0 && parseInt(userAgent.substring(userAgent.indexOf('rv:') + 3, userAgent.indexOf('.', userAgent.indexOf('rv:'))), 10) > 11);
+	var isCompatibleIE = (userAgent.indexOf('Trident/') > 0 && parseInt(userAgent.substring(userAgent.indexOf('rv:') + 3, userAgent.indexOf('.', userAgent.indexOf('rv:'))), 10) >= 11);
 	var isEdge = /Edge/.test(userAgent);
 	var isChrome = /chrome/i.test(userAgent) && !isEdge;
 	var isSafari = /safari/i.test(userAgent) && !isEdge;
