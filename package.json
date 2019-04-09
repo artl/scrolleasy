@@ -1,7 +1,7 @@
 {
   "name": "scrolleasy",
   "version": "1.4.6",
-  "description": "Smooth scrolling experience for websites. This is the standalone version of SmoothScroll for individual websites and themes. Mouse wheel, keyboard and touchpad scrolling all supported.",
+  "description": "Smooth scrolling experience for websites.",
   "main": "scrolleasy.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/artl/scrolleasy/issues"
   },
-  "homepage": "https://github.com/artl/scrolleasy"
+  "homepage": "https://github.com/artl/scrolleasy",
+  "devDependencies": {
+    "uglify-js": "^3.5.3"
+  }
 }
