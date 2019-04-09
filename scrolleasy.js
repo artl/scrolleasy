@@ -1,6 +1,6 @@
 /**
  *
- * Scrolleasy 1.0.0
+ * Scrolleasy 1.4.7
  * https://github.com/artl/scrolleasy
  *
  * Licensed under the terms of the MIT license.
@@ -534,12 +534,12 @@
 	 * Helpers
 	 */
 
-	function addEvent(type, fn) {
-		window.addEventListener(type, fn, false);
+	function addEvent(type, listener, options) {
+		window.addEventListener(type, listener, options || false);
 	}
 
-	function removeEvent(type, fn) {
-		window.removeEventListener(type, fn, false);
+	function removeEvent(type, listener, options) {
+		window.removeEventListener(type, listener, options || false);
 	}
 
 	function isNodeName(el, tag) {
@@ -688,14 +688,21 @@
 	var isOldSafari = isSafari && (/Version\/8/i.test(userAgent) || /Version\/9/i.test(userAgent));
 	var isEnabledForBrowser = (isChrome || isSafari || isCompatibleIE || isEdge) && !isMobile;
 
-	var wheelEvent;
-	if ('onwheel' in document.createElement('div'))
-		wheelEvent = 'wheel';
-	else if ('onmousewheel' in document.createElement('div'))
-		wheelEvent = 'mousewheel';
+	// detect treating event listeners as passive
+	var supportsPassive = false;
+	try {
+	  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+	    get: function () {
+	            supportsPassive = true;
+	        } 
+	    }));
+	} catch(e) {}
+	
+	var wheelOpt = supportsPassive ? { passive: false } : false;
+	var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel'; 
 
 	if (wheelEvent && isEnabledForBrowser) {
-		addEvent(wheelEvent, wheel);
+		addEvent(wheelEvent, wheel, wheelOpt);
 		addEvent('mousedown', mousedown);
 		addEvent('load', init);
 	}
